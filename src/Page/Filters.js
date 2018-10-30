@@ -20,7 +20,6 @@ export default class Filters extends Component {
    }
 
    filter = (type, data) =>{
-       console.log(type, data)
     let filters = this.state.filters;
     let types = this.state.types;
 

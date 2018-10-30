@@ -19,7 +19,6 @@ export default class Body extends Component {
   
 
     filter = (type, data) =>{
-        console.log(type, data)
         let classes = this.state.classes
         let filters = this.state.filters
         let typeArr = this.state.type
@@ -60,14 +59,12 @@ export default class Body extends Component {
 
     }
     remove = (data, type) => {
-        console.log(data, type)
             let classes = this.state.classes
             let length  
             
             let filteredData = classes.filter(category => {
                 return category[type][0] !== data
             })
-            console.log(filteredData)
             if(filteredData.length !== 0){
                 length = filteredData.length
             }else{
