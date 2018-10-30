@@ -126,8 +126,8 @@ let types = this.state.types
 filters = filters.filter(filter => 
      filter !== data
 )
-types = types.filter((type, i) => 
-    types[i] !== index
+types = types.filter(type => 
+    type !== types[index]
 )
 for(let i = 0; i < filters.length; i ++){
     this.filter(types[i], filters)
@@ -140,11 +140,11 @@ showFilters = () =>{
     return (
         <div className="row">
          {filters.map((filter, index) => (
-            <div className="col-xs-4 mt-2">
+            <div key={index} className="col-xs-4 mt-2">
 
-            <div role="button" class="ygi-search-filters__filter" key={index}>
-            <label class="ygi-search-filters__filter-label">{this.camelCase(filter)}</label>
-            <button class="ygi-search-filters__filter-close" onClick={()=>this.removeFilter(filter)}></button>
+            <div role="button" className="ygi-search-filters__filter" key={index}>
+            <label className="ygi-search-filters__filter-label">{this.camelCase(filter)}</label>
+            <button className="ygi-search-filters__filter-close" onClick={()=>this.removeFilter(filter)}></button>
             </div>
             </div>
          ))}
@@ -160,10 +160,10 @@ handleChange = (e) =>{
         <React.Fragment>
 
         <div style={{margin: 'auto'}} className="row container px-3">
-        <div class="ygi-search-bar col col-12 col-lg-2"><div class="ygi-search-bar__wrapper">
-        <input placeholder="Search" type="text" class="ygi-search-bar__input" onChange={this.handleChange} />
-        <a href="javascript:void(0)" class="icon-wrapper ygi-search-bar__icon-wrapper">
-        <i class="fas fa-search"></i> </a>
+        <div className="ygi-search-bar col col-12 col-lg-2"><div className="ygi-search-bar__wrapper">
+        <input placeholder="Search" type="text" className="ygi-search-bar__input" onChange={this.handleChange} />
+        <a href="/" className="icon-wrapper ygi-search-bar__icon-wrapper">
+        <i className="fas fa-search"></i> </a>
         </div></div>
             <div className="col col-12 col-lg-2">
             <div className='ygi-dropdown__wrapper yi-teacher-dropdown nopadding d-block yi-dropdown--beneath-modal show'>

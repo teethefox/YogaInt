@@ -24,7 +24,8 @@ export default class Body extends Component {
         let typeArr = this.state.type
         let length
         let filteredData=[]
-   
+        filters = data
+        console.log(filters)
         for(let k=0; k < data.length; k ++){
             for(let i = 0; i < classes.length; i++) {
             if(classes[i][type][0] === data[k]) {
@@ -100,12 +101,12 @@ export default class Body extends Component {
         />
     
         <div className="container">
-        <p class="ygi-profile-classes__heading mx-auto text-center">    
+        <div className="ygi-profile-classes__heading mx-auto text-center">    
         {results > 0 &&
         <div>
         {results} results
         </div>
-        }</p>
+        }</div>
       <div className="ygi-profile-classes__wrapper" >
      <div className="row">
       {classes.map((item,key) => {
@@ -114,20 +115,20 @@ export default class Body extends Component {
                  <div key={key} className="col-lg-2 col-md-3 col-sm-4">
                 <div className="m-2">
                 <div className="yi-card-small-centered-hover-wrapper">
-                <a className="yi-card-small " >
-                <div class="yi-card-small__image"><img src={item.thumb} alt="Card" /></div>
-                  <div class="yi-card-small__content">
-                  <h4 class="yi-card-small__title yi-card-small__title--two-line yi-card-small--hover-hide">{item.title}</h4>
-                  <div class="yi-card-small__author yi-card-small--hover-hide"> {this.camelCase(item.teacher)}</div>
-                  <p class="yi-card-small__snippet mt-1"></p>
+                <a className="yi-card-small " href='/'>
+                <div className="yi-card-small__image"><img src={item.thumb} alt="Card" /></div>
+                  <div className="yi-card-small__content">
+                  <h4 className="yi-card-small__title yi-card-small__title--two-line yi-card-small--hover-hide">{item.title}</h4>
+                  <div className="yi-card-small__author yi-card-small--hover-hide"> {this.camelCase(item.teacher)}</div>
+                  <p className="yi-card-small__snippet mt-1"></p>
                     </div>
-                    <div class="yi-card-small__lower-background"></div>
-                  <div class="yi-card-small__lower-left"><div><span class="yi-card-small__level">{this.camelCase(item.level)}</span></div></div>
-                  <div class="yi-card-small__lower-mid">
+                    <div className="yi-card-small__lower-background"></div>
+                  <div className="yi-card-small__lower-left"><div><span className="yi-card-small__level">{this.camelCase(item.level)}</span></div></div>
+                  <div className="yi-card-small__lower-mid">
                   </div>
-                  <div class="yi-card-small__lower-right">
-                  <i class="far fa-clock"></i>
-                  <span class="yi-card-small__duration"> {this.camelCase(item.duration)} </span>
+                  <div className="yi-card-small__lower-right">
+                  <i className="far fa-clock"></i>
+                  <span className="yi-card-small__duration"> {this.camelCase(item.duration)} </span>
                   </div>
                  
                   
