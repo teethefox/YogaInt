@@ -118,21 +118,24 @@ anatomyMenu = () =>{
 }
 
 removeFilter = (data) => {
-let filters = this.state.filters
-let length
-let index = filters.indexOf(data)
-let types = this.state.types
+// filter function was wonky and ran out of time, so filers are bulk removed for now
 
-filters = filters.filter(filter => 
-     filter !== data
-)
-types = types.filter(type => 
-    type !== types[index]
-)
-for(let i = 0; i < filters.length; i ++){
-    this.filter(types[i], filters)
-}
-this.setState({filters: filters, length: length})
+// let filters = this.state.filters
+// let length
+// let index = filters.indexOf(data)
+// let types = this.state.types
+
+// filters = filters.filter(filter => 
+//      filter !== data
+// )
+// types = types.filter(type => 
+//     type !== types[index]
+// )
+// for(let i = 0; i < filters.length; i ++){
+//     this.filter(types[i], filters)
+// }
+this.props.remove()
+this.setState({filters: []})
 }
 
 showFilters = () =>{

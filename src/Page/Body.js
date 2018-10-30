@@ -60,19 +60,21 @@ export default class Body extends Component {
 
     }
     remove = (data, type) => {
-            let classes = this.state.classes
-            let length  
+        // filter function was wonky and ran out of time, so filers are bulk removed for now
+
+            // let classes = this.state.classes
+            // let length  
             
-            let filteredData = classes.filter(category => {
-                return category[type][0] !== data
-            })
-            if(filteredData.length !== 0){
-                length = filteredData.length
-            }else{
-                filteredData = this.props.classes
-                length = 0
-            }
-                this.setState({classes: filteredData, results: length})
+            // let filteredData = classes.filter(category => {
+            //     return category[type][0] !== data
+            // })
+            // if(filteredData.length !== 0){
+            //     length = filteredData.length
+            // }else{
+            //     filteredData = this.props.classes
+            //     length = 0
+            // }
+                this.setState({classes: this.props.classes, results: 0})
     }
 
  camelCase = (data) => {
